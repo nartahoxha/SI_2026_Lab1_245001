@@ -51,10 +51,14 @@ class Library {
         books.add(book);
     }
 
-    // TODO: Implement in branch feature-search-books
-    public boolean searchBookByTitle(String title) {
-        return false;
+public boolean searchBookByTitle(String title) {
+    for (Book book : books) {
+        if (book.title.equalsIgnoreCase(title)) {
+            return true;
+        }
     }
+    return false;
+}
 
     // TODO: Implement in branch feature-borrow-book
     public void borrowBook(String title) {
@@ -119,6 +123,7 @@ public class SI2026Lab1Main {
         library.addBook(new Book("The Hobbit", "J.R.R. Tolkien", "Fantasy"));
         library.addBook(new Book("1984", "George Orwell", "Dystopian"));
 
+     System.out.println(library.searchBookByTitle("Harry Potter"));
         System.out.println("Library initialized.");
     }
 }
