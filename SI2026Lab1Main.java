@@ -58,6 +58,14 @@ class Library {
         books.add(book);
     }
 
+public void printBooksByGenre(String genre) {
+    for (Book book : books) {
+        if (book.getGenre().equalsIgnoreCase(genre)) {
+            System.out.println(book.getTitle() + " - " + book.getAuthor());
+        }
+    }
+}
+
 public boolean searchBookByTitle(String title) {
     for (Book book : books) {
         if (book.title.equalsIgnoreCase(title)) {
@@ -131,5 +139,6 @@ public class SI2026Lab1Main {
      System.out.println(library.searchBookByTitle("Harry Potter"));
        library.borrowBook("The Hobbit");
         System.out.println("Library initialized.");
+         library.printBooksByGenre("Programming");
     }
 }
