@@ -13,6 +13,13 @@ class Book {
         this.genre = genre;
         this.borrowed = false;
     }
+public boolean isBorrowed() {
+    return borrowed;
+}
+
+public void setBorrowed(boolean borrowed) {
+    this.borrowed = borrowed;
+}
 
     public String getTitle() {
         return title;
@@ -59,22 +66,20 @@ public boolean searchBookByTitle(String title) {
     }
     return false;
 }
-
-    // TODO: Implement in branch feature-borrow-book
-    public void borrowBook(String title) {
-        for (Book book : books) {
-            if (book.getTitle().equalsIgnoreCase(title)) {
-                if (!book.isBorrowed()) {
-                    book.setBorrowed(true);
-                    System.out.println("Book borrowed.");
-                } else {
-                    System.out.println("Book is already borrowed.");
-                }
-                return;
+public void borrowBook(String title) {
+    for (Book book : books) {
+        if (book.getTitle().equalsIgnoreCase(title)) {
+            if (!book.isBorrowed()) {
+                book.setBorrowed(true);
+                System.out.println("Borrowed successfully.");
+            } else {
+                System.out.println("Book is already borrowed.");
             }
+            return;
         }
-        System.out.println("Book not found.");
     }
+    System.out.println("Book not found.");
+}
 
     public void returnBook(String title) {
         for (Book book : books) {
@@ -124,6 +129,7 @@ public class SI2026Lab1Main {
         library.addBook(new Book("1984", "George Orwell", "Dystopian"));
 
      System.out.println(library.searchBookByTitle("Harry Potter"));
+       library.borrowBook("The Hobbit");
         System.out.println("Library initialized.");
     }
 }
