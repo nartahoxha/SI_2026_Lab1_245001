@@ -1,0 +1,23 @@
+Користени команди:
+
+git checkout
+git branch
+git add
+git commit
+git push
+git merge
+git log
+
+Merge информации:
+
+feature-search-books -> fast-forward merge
+
+feature-genre-report -> merge со 'ort' стратегија
+
+feature-borrow-book -> merge во master
+
+Конфликт:
+Не настана конфликт при merge.
+
+git status после merge:
+working tree clean
